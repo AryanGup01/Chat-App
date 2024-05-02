@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "db7bd0a7-53de-4a0e-9f72-d9efd74e1bec",
+		"name": "Chat App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "32635147",
+		"_collection_link": "https://martian-trinity-508622.postman.co/workspace/My-Workspace~f5c40650-25be-4728-846f-feaa46213d48/collection/32635147-db7bd0a7-53de-4a0e-9f72-d9efd74e1bec?action=share&source=collection_link&creator=32635147"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"aryan@123.com\",\n    \"fullName\" : \"aryan\",\n    \"password\": \"12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{server}}/register"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"aryan@123.com\",\n    \"password\": \"12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{server}}/login"
+			},
+			"response": []
+		},
+		{
+			"name": "get conversations of a user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{server}}/conversations/66335de8f9ca909972c94ff1"
+			},
+			"response": []
+		},
+		{
+			"name": "send message",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"conversationId\": \"663367a3742e17e0a3391f3b\",\n    \"senderId\" : \"66336c44742e17e0a3391f57\",\n    \"message\" : \"this is aryan\",\n    \"receiverId\" : \"66336785742e17e0a3391f22\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{server}}/message"
+			},
+			"response": []
+		},
+		{
+			"name": "gert messages",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{server}}/message/663367a3742e17e0a3391f3b"
+			},
+			"response": []
+		},
+		{
+			"name": "get users except current",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{server}}/users/66336785742e17e0a3391f22"
+			},
+			"response": []
+		},
+		{
+			"name": "llm response",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"prompt\" : \" hi\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{server}}/mock-llm"
+			},
+			"response": []
+		}
+	]
+}
